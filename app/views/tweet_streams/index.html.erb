@@ -1,0 +1,28 @@
+<h1>Find Tweets</h1>
+<p>Search for the latest tweets from a user!</p>
+
+<%= form_for @twitter_user, url: tweet_streams_path, method: :post do |f| %>
+
+  <% if @twitter_user.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        There was a problem with your search!
+      </h2>
+      <ul>
+        <% @twitter_user.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%= f.label "Twitter Handle" %><br>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.submit "Search Tweets" %>
+  </p>
+
+<% end %>
