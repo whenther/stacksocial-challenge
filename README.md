@@ -50,4 +50,6 @@ heroku config:set TWITTER_SECRET=SECRETHERE
 ```
 
 ## Test
-
+```
+rake test
+```
