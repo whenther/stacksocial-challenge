@@ -3,18 +3,7 @@
 
 <%= form_for @twitter_user, url: tweet_streams_path, method: :post do |f| %>
 
-  <% if @twitter_user.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        There was a problem with your search!
-      </h2>
-      <ul>
-        <% @twitter_user.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <%= render 'shared/error_messages', object: f.object %>
 
   <p>
     <%= f.label "Twitter Handle" %><br>
