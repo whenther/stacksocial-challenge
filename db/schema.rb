@@ -12,11 +12,14 @@
 
 ActiveRecord::Schema.define(version: 20161217011647) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "tweet_streams", force: :cascade do |t|
     t.string   "handle"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["handle", "created_at"], name: "index_tweet_streams_on_handle_and_created_at"
+    t.index ["handle", "created_at"], name: "index_tweet_streams_on_handle_and_created_at", using: :btree
   end
 
   create_table "tweets", force: :cascade do |t|
@@ -25,7 +28,7 @@ ActiveRecord::Schema.define(version: 20161217011647) do
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.integer  "tweet_stream_id"
-    t.index ["tweet_stream_id"], name: "index_tweets_on_tweet_stream_id"
+    t.index ["tweet_stream_id"], name: "index_tweets_on_tweet_stream_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -35,4 +38,5 @@ ActiveRecord::Schema.define(version: 20161217011647) do
     t.datetime "updated_at",      null: false
   end
 
+  add_foreign_key "tweets", "tweet_streams"
 end
