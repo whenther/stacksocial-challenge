@@ -13,7 +13,7 @@ class CreateTweetStreams < ActiveRecord::Migration[5.0]
       t.timestamps
     end
 
-    add_reference :tweets, :tweet_streams, index: true, foreign_key: true
-    add_index :tweet_streams, :handle
+    add_reference :tweets, :tweet_stream, index: true, foreign_key: true
+    add_index :tweet_streams, [:handle, :created_at]
   end
 end

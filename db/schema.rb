@@ -10,22 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161217011949) do
+ActiveRecord::Schema.define(version: 20161217011647) do
 
   create_table "tweet_streams", force: :cascade do |t|
     t.string   "handle"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["handle"], name: "index_tweet_streams_on_handle"
+    t.index ["handle", "created_at"], name: "index_tweet_streams_on_handle_and_created_at"
   end
 
   create_table "tweets", force: :cascade do |t|
     t.string   "text"
     t.datetime "posted"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
-    t.integer  "tweet_streams_id"
-    t.index ["tweet_streams_id"], name: "index_tweets_on_tweet_streams_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.integer  "tweet_stream_id"
+    t.index ["tweet_stream_id"], name: "index_tweets_on_tweet_stream_id"
   end
 
   create_table "users", force: :cascade do |t|

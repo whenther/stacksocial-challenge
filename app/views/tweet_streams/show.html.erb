@@ -1,5 +1,9 @@
-<h1><%= @twitter_user.name %>'s Latest Tweets:</h1>
+<h1><%= @twitter_user.handle %>'s Latest Tweets:</h1>
 
-<% @tweets.each do |tweet| %>
-  <p>I'm a tweet!</p>
+<% if !@tweets.empty? %>
+  <% @tweets.each do |tweet| %>
+    <p><%= tweet.text %> | <strong><%= tweet.posted %></strong>
+  <% end %>
+<% else %>
+  <h3>Sorry, no tweets found!</h3>
 <% end %>

@@ -1,6 +1,6 @@
 class TwitterUser
   include ActiveModel::Model
 
-  attr_accessor :name
-  validates_presence_of :name
+  attr_accessor :handle
+  validates_presence_of :handle
 end
