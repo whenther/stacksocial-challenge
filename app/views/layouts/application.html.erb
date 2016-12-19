@@ -23,6 +23,10 @@
     <% end %>
 
     <div class="row">
+      <% if logged_in? %>
+        <%= link_to "logout", logout_path, method: "delete" %></p>
+      <% end %>
+
       <%= yield %>
     </div>
 

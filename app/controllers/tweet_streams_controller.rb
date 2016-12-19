@@ -1,4 +1,6 @@
 class TweetStreamsController < ApplicationController
+  before_action :protect
+
   def index
     @twitter_user = TwitterUser.new
   end
