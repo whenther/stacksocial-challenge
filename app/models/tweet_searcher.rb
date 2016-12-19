@@ -17,10 +17,10 @@ class TweetSearcher
     @tweets =
       if cached_tweet_stream
         puts "CACHED----------"
-        cached_tweet_stream.tweets
+        cached_tweet_stream.tweets.order(posted: :desc)
       else
         puts "FETCH----------"
-        fetch_and_cache_tweets
+        fetch_and_cache_tweets.order(posted: :desc)
       end
   end
 

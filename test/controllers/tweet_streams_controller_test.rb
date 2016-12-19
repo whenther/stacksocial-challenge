@@ -1,14 +1,8 @@
 require 'test_helper'
 
 class TweetStreamsControllerTest < ActionDispatch::IntegrationTest
-  test "should get index" do
-    get tweet_streams_index_url
-    assert_response :success
+  test "should protect index" do
+    get tweet_streams_url
+    assert_response :found
   end
-
-  test "should get show" do
-    get tweet_streams_show_url
-    assert_response :success
-  end
-
 end

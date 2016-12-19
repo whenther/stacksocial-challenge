@@ -1,7 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  username: MyString
+handle1:
+  handle: Handle1
 
-two:
-  username: MyString
+handle2:
+  handle: Handle2

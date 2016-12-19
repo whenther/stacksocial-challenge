@@ -1,9 +1,16 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  text: MyString
-  posted: 2016-12-16 17:19:49
+  text: "@Handle2 what's up?"
+  posted: 2016-12-16 16:19:49
+  tweet_stream: handle1
 
 two:
-  text: MyString
-  posted: 2016-12-16 17:19:49
+  text: "just setting up my twttr"
+  posted: 2016-12-16 17:18:49
+  tweet_stream: handle1
+
+three:
+  text: "also setting up my twttr"
+  posted: 2016-12-16 17:16:49
+  tweet_stream: handle2
