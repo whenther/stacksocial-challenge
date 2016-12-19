@@ -2,7 +2,10 @@
 
 <% if !@tweets.empty? %>
   <% @tweets.each do |tweet| %>
-    <p><%= tweet.text %> | <strong><%= tweet.posted %></strong>
+    <p>
+      <%= render_tweet_text(tweet.text) %>
+
+      | <strong><%= tweet.posted %></strong>
   <% end %>
 <% else %>
   <h3>Sorry, no tweets found!</h3>
