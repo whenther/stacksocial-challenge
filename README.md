@@ -1,4 +1,4 @@
-# StackSocial-Challenge
+# twitter-on-rails
 
 ## Walkthrough
 Brief walkthrough of app design / choices made
